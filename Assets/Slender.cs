@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SlenderBehavior : MonoBehaviour {
+public class Slender : MonoBehaviour {
 
 	public Transform player;      // the Object the player is controlling
 	public Vector3 spawnOrgin;     // this will be the bottom right corner of a square we will use as the spawn area
@@ -41,5 +41,4 @@ public class SlenderBehavior : MonoBehaviour {
 			nearPlayer = false;
 		}*/
 	}
-
 }

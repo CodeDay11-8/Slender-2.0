@@ -54,10 +54,10 @@ public class Switch : MonoBehaviour {
 				Destroy(GameObject.Find(this.name));
 				switchesLeft--;
 
-				//if (hit.collider != null)
-				//{
+				if (hit.collider != null)
+				{
 				//	hit.collider.enabled = false;
-				//}
+				}
 
 			}
 			
