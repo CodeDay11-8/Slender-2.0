@@ -57,13 +57,14 @@ public class Switch : MonoBehaviour {
 		}
 		*/
 
-		if (Input.GetMouseButtonDown(0) && this.fakeswitch == false || Input.GetKeyDown(KeyCode.E) && this.fakeswitch == false) {
+		if (Input.GetMouseButtonDown(0) && this.fakeswitch == false || Input.GetKeyDown(KeyCode.E) && this.fakeswitch == false) 
+		{
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 			if (Physics.Raycast(ray, out hit))
 			{
-				
+
 				Destroy(GameObject.Find(this.name));
 				switchesLeft--;
 
@@ -75,6 +76,11 @@ public class Switch : MonoBehaviour {
 			}
 			
 			
+		}
+
+		else
+		{
+			//GameObject slenderspawn = (GameObject)Instantiate(slender, new Vector3(0,0,0), transform.rotation);
 		}
 
 	}
