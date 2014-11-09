@@ -4,12 +4,40 @@ using System.Collections;
 public class Switch : MonoBehaviour {
 
 	public static int switchesLeft = 4;
-	bool fakeswitch = false;
+	bool fakeswitch;
+	int randomNumber;
+	Random rand = new Random();
 
+	void setFake(bool isFake)
+	{
+		fakeswitch = isFake;
+	}
 
 	// Use this for initialization
 	void Start () {
-	
+
+		randomNumber = Random.Range(0,1);
+
+		switch(randomNumber)
+		{
+			case 0:
+			{
+				setFake(false);
+				break;
+			}
+			case 1:
+			{
+				setFake(true);
+				break;
+			}
+			default:
+			{
+				setFake(false);
+				break;
+			}
+
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -29,14 +57,14 @@ public class Switch : MonoBehaviour {
 		}
 		*/
 
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0) && this.fakeswitch == false || Input.GetKeyDown(KeyCode.E) && this.fakeswitch == false) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-			if (Physics.Raycast(ray, out hit) && fakeswitch == false)
+			if (Physics.Raycast(ray, out hit))
 			{
 				
-				Destroy(GameObject.Find("switch_1"));
+				Destroy(GameObject.Find(this.name));
 				switchesLeft--;
 
 				if (hit.collider != null)
