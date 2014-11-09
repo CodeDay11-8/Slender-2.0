@@ -42,22 +42,8 @@ public class Switch : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		/*
-		if ( Input.GetMouseButtonDown(0))
-		{
-			RaycastHit hit = RaycastHit;
-			Ray ray = (Ray = Camera.main.ScreenPointToRay (Input.mousePosition));
-			
-			if (Physics.Raycast (ray, hit, 100.0) && fakeswitch == false)
-			{  
-				Destroy(GameObject.Find("switch_1"));
-				switchesLeft--;
-			}
-		}
-		*/
 
-		if (Input.GetMouseButtonDown(0) && this.fakeswitch == false || Input.GetKeyDown(KeyCode.E) && this.fakeswitch == false) 
+		if (Input.GetMouseButtonDown(0) && this.fakeswitch == false|| Input.GetKeyDown(KeyCode.E) && this.fakeswitch == false) 
 		{
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -68,10 +54,10 @@ public class Switch : MonoBehaviour {
 				Destroy(GameObject.Find(this.name));
 				switchesLeft--;
 
-				if (hit.collider != null)
-				{
-					hit.collider.enabled = false;
-				}
+				//if (hit.collider != null)
+				//{
+				//	hit.collider.enabled = false;
+				//}
 
 			}
 			
