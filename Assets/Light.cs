@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HUDDisplay : MonoBehaviour {
-
-	public static int slendermans = 0;
+public class Light : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,8 +10,6 @@ public class HUDDisplay : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		guiText.text = "Slendermans: " + slendermans;
 
 	}
 }
