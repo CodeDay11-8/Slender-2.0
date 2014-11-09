@@ -5,9 +5,16 @@ public class SlenderLightScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+	
+		
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
 		Hashtable data = new Hashtable();
 		data.Add( "value", "off" );
-		
+
 		// When you pass a Hashtable as the third argument, we assume you want it send as JSON-encoded
 		// data.  We'll encode it to JSON for you and set the Content-Type header to application/json
 		HTTP.Request theRequest = new HTTP.Request( "put", "https://graph.api.smartthings.com/api/smartapps/installations/75162506-2436-4206-9b5a-8ef31ba5e5f4/switch", data );
@@ -30,13 +37,6 @@ public class SlenderLightScript : MonoBehaviour {
 			}
 			
 		});
-		
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 }
